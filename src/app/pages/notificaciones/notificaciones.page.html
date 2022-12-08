@@ -1,0 +1,42 @@
+<app-header title="Notificaciones"></app-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Centro de Notificciones</ion-label>
+    </ion-list-header>
+  </ion-list>
+
+  <ion-card>
+    <!-- <ion-card-header class="ion-text-right">
+      <ion-button (click)="checkReadAll()" fill="clear" shape="round">
+        Marcar Todo como leido
+      </ion-button>
+    </ion-card-header> -->
+    <ion-card-content>
+      <ion-list>
+        <ion-item-sliding *ngFor="let item of notifications">
+          <ion-item>
+            <ion-label>
+              <h3>
+                <b>Tipo: </b> {{ item.TIPO }}
+              </h3>
+              <p>{{ item.FECHA }}</p>
+            </ion-label>
+          </ion-item>
+          <ion-item-options side="end">
+            <ion-item-option color="primary" (click)="detail(item)">
+              <ion-icon slot="icon-only" name="eye"></ion-icon>
+            </ion-item-option>
+            <!-- <ion-item-option color="secondary" (click)="checkRead(item)">
+              <ion-icon slot="icon-only" name="checkmark-done"></ion-icon>
+            </ion-item-option> -->
+          </ion-item-options>
+        </ion-item-sliding>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+
+</ion-content>

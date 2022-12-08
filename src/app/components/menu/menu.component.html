@@ -1,0 +1,25 @@
+<ion-menu side="start" menuId="first" contentId="main">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>GYCsol</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+
+      <ion-menu-toggle class="fondo" *ngFor="let c of componentes | async">
+        <ion-item [routerLink]="c.redirectTo" detail>
+          <ion-icon slot="start" [name]="c.icon"></ion-icon>
+          <ion-label>{{ c.title }}</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+      <ion-menu-toggle>
+        <ion-item (click)="navMarker()"  detail>
+          <ion-icon></ion-icon>
+          <ion-icon slot="start" name="finger-print-outline"></ion-icon>
+          Ir a marcaje
+        </ion-item>
+      </ion-menu-toggle>
+    </ion-list>
+  </ion-content>
+</ion-menu>

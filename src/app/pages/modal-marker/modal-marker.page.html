@@ -1,0 +1,56 @@
+<ion-content class="ion-padding fondo">
+
+  <ion-card class="fondo">
+    <ion-card-header class="fondo">
+      <p id="successP" class="fondo">
+        <ion-icon size="large" name="checkmark-circle" color="success" class="icon-success"></ion-icon>
+        <strong style="font-size: 1.2em;">Marcación</strong>
+      </p>
+      <p id="errorP" class="fondo">
+        <ion-icon name="close-circle" color="danger" class="icon-error"></ion-icon>
+        <strong style="font-size: 1.2em;">Marcación Duplicada</strong>
+      </p>
+    </ion-card-header>
+
+    <ion-card-content id="messageNull" class="fondo">
+      <ion-img [src]="image" class="imagen-marker"></ion-img>
+      <br>
+      <ion-button (click)="onCloseModal()" expand="block">
+        Continuar
+      </ion-button>
+      <br>
+      <ion-list class="ion-text-center fondo">
+        <ion-item class="ion-text-center fondo">
+          <ion-label><strong>Tipo:</strong> {{ tipo }}</ion-label>
+        </ion-item>
+        <ion-item class="ion-text-center fondo">
+          <ion-label><strong>RUT</strong> {{ rut }}</ion-label>
+        </ion-item>
+        <ion-item class="ion-text-center fondo">
+          <ion-label>{{ fecha }}</ion-label>
+        </ion-item>
+        <ion-item class="ion-text-center fondo">
+          <ion-label>Hora: {{ hora }}</ion-label>
+        </ion-item>
+      </ion-list>
+
+    </ion-card-content>
+
+    <ion-card-content id="messag" class="fondo">
+      <p>{{message }}</p>
+      <br>
+      <ion-button (click)="onCloseModal()" expand="block">
+        Enviar
+      </ion-button>
+    </ion-card-content>
+
+
+
+
+  </ion-card>
+
+
+
+
+
+</ion-content>

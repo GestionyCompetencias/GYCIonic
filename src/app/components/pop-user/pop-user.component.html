@@ -1,0 +1,15 @@
+<ion-list>
+  <ion-item (click)="navClick( 'profile' )">
+    <ion-icon slot="start" name="person-circle-outline"></ion-icon>
+    <ion-label>Perfil</ion-label>
+  </ion-item>
+  <ion-item (click)="navClick( 'updatepass' )">
+    <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
+    <ion-label>Cambiar Contraseña</ion-label>
+    <hr />
+  </ion-item>
+  <ion-item (click)="navClick( 'logout' )">
+    <ion-icon slot="start" name="log-out-outline"></ion-icon>
+    <ion-label>Cerrar Session</ion-label>
+  </ion-item>
+</ion-list>

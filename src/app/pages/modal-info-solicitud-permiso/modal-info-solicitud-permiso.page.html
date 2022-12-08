@@ -1,0 +1,72 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="dark">
+    <ion-title>Detalles Solicitud</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="cerrarModal()" color="tertiary" fill="solid" shape="round">
+        <ion-icon slot="start" name="close"></ion-icon>
+        Cerrar
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-list>
+
+    <ion-item>
+      <ion-label>
+        <h3>Fecha Solicitud</h3>
+        <p class="ion-text-uppercase">{{ FECHA }}</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <h3>Trabajador</h3>
+        <p class="ion-text-uppercase">{{ TRABAJADOR }}</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <h3>Fecha Inicio</h3>
+        <p class="ion-text-uppercase">{{ FINICIO }}</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <h3>Fecha Término</h3>
+        <p class="ion-text-uppercase">{{ FTERMINO }}</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <h3>Autorizacion de Empresa</h3>
+        <p class="ion-text-uppercase" id="autorizado">Autorizado</p>
+        <p class="ion-text-uppercase" id="pendiente">Pendiente</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <h3>Dias Compensados</h3>
+        <p class="ion-text-uppercase">{{ COMPENSADO }}</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <h3>Motivo</h3>
+        <p class="ion-text-uppercase">{{ MOTIVO }}</p>
+      </ion-label>
+    </ion-item>
+
+
+
+
+  </ion-list>
+</ion-content>
+

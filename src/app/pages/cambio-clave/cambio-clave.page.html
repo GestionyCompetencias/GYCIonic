@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/setting"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Cambio de Contraseña</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <div class="content-login">
+    <ion-card>
+
+      <ion-card-header>
+        <ion-card-title class="ion-text-center">
+          <strong>¡Ingrese su nueva contraseña!</strong>
+        </ion-card-title>
+        <ion-card-subtitle class="ion-text-center">(Debe tener 6 o más digitos)</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        <form #formPass="ngForm" (ngSubmit)="sendPass()">
+          <ion-list>
+            <ion-item>
+              <ion-label color="medium" position="floating" class="ion-text-uppercase">
+                <ion-icon slot="start" name="lock-closed"></ion-icon>
+                Contraseña Actual
+              </ion-label>
+              <ion-input name="antigua" [(ngModel)]="dataPass.old" type="password" required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label color="medium" position="floating" class="ion-text-uppercase">
+                <ion-icon slot="start" name="lock-closed"></ion-icon>
+                Nueva Contraseña
+              </ion-label>
+              <ion-input name="nueva" [(ngModel)]="dataPass.new" type="password" required></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label color="medium" position="floating" class="ion-text-uppercase">
+                <ion-icon slot="start" name="lock-closed"></ion-icon>
+                Confirme su Nueva Contraseña
+              </ion-label>
+              <ion-input name="confirmacion" [(ngModel)]="dataPass.conf" type="password" required></ion-input>
+            </ion-item>
+
+
+          </ion-list>
+
+          <ion-button [disabled]="formPass.invalid" type="submit" expand="full" color="primary">
+            Guardar
+          </ion-button>
+        </form>
+
+        <div style="height: 10px"></div>
+
+        <h3>Requesito:</h3>
+        <p>Minimo 6 caracteres</p>
+      </ion-card-content>
+
+    </ion-card>
+  </div>
+
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">
+      Gestion y Competencias - Chile
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>
+

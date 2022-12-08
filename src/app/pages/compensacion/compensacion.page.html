@@ -1,0 +1,88 @@
+<app-header title="Compensación"></app-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Solicitud de Compensación</ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>Días Compensados</ion-label>
+      <ion-input type="number" [(ngModel)]="dias" name="dias" class="ion-text-right"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-button (click)="onClickCargar()" expand="full">
+    <ion-icon slot="start" name="caret-forward-circle"></ion-icon>
+    <ion-label>Cargar</ion-label>
+  </ion-button>
+
+
+  <ion-card *ngIf="solicitud.length > 0 && solicitud !== null">
+    <ion-card-header>
+      <ion-card-subtitle>Trabajador:</ion-card-subtitle>
+      <ion-card-title>{{ trabajador }}</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card *ngFor="let item of solicitud">
+    <ion-card-content>
+      <ion-list>
+
+        <ion-item>
+          <ion-label>
+            <h3>Periodo</h3>
+          </ion-label>
+          <ion-label>
+            <p>{{ item.nro_periodo }}</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <h3>Inicio</h3>
+          </ion-label>
+          <ion-label>
+            <p>{{ item.fec_inivac }}</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <h3>Termino</h3>
+          </ion-label>
+          <ion-label>
+            <p>{{ item.fec_finvac }}</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <h3>Hábiles</h3>
+          </ion-label>
+          <ion-label>
+            <p>{{ item.dias_habil }}</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <h3>Corridos</h3>
+          </ion-label>
+          <ion-label>
+            <p>{{ item.dias_corri }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+
+
+    </ion-card-content>
+
+  </ion-card>
+
+  <ion-button *ngIf="solicitud.length > 0" (click)="solicitarCompensacion()" expand="block">
+    Solicitar
+  </ion-button>
+
+</ion-content>

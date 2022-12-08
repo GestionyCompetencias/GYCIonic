@@ -1,0 +1,163 @@
+<ion-header>
+  <ion-toolbar color="primary">
+
+    <ion-buttons slot="start">
+      <ion-menu-button menu="first"></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>Home</ion-title>
+
+    <ion-buttons slot="end">
+      <app-notify></app-notify>
+
+      <ion-button (click)="mostrarPopover( $event )">
+        <ion-icon slot="icon-only" name="person-circle"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+
+    <ion-col   size="6" size-sm="6" size-md="4" size-lg="2">
+      <ion-card class="border-left-primary fondo">
+        <ion-card-header>
+          <ion-card-title class="ion-text-uppercase">
+            <ion-text color="primary" style="font-size: small;">
+              Fecha Actual
+            </ion-text>
+          </ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          <ion-row>
+            <ion-col size="6">
+              <ion-icon color="primary" src="/assets/iconos/calendar-alt-solid.svg" size="large"></ion-icon>
+            </ion-col>
+            <ion-col size="6" class="ion-text-right">
+              <ion-label>{{ fechaAct | date: 'dd MMMM yyyy' }}</ion-label>
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+
+    <ion-col size="6" size-sm="6" size-md="4" size-lg="2">
+      <ion-card class="border-left-success fondo" (click)="redireccionar('registro-asistencia')">
+        <ion-card-header>
+          <ion-card-title class="ion-text-uppercase">
+            <ion-text color="success" style="font-size: small;">
+              Total Descansos.
+            </ion-text>
+          </ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          <ion-row>
+            <ion-col size="6">
+              <ion-icon color="success" src="/assets/iconos/calendar-check-solid.svg" size="large"></ion-icon>
+            </ion-col>
+            <ion-col size="6" class="ion-text-right">
+              <ion-label>{{ totalDescansos }}</ion-label>
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+
+    <ion-col size="6" size-sm="6" size-md="4" size-lg="2">
+      <ion-card class="border-left-danger fondo" (click)="redireccionar('registro-asistencia')">
+        <ion-card-header>
+          <ion-card-title class="ion-text-uppercase">
+            <ion-text color="danger" color="danger" style="font-size: small;">
+              Total Inasitencias
+            </ion-text>
+          </ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          <ion-row>
+            <ion-col size="6">
+              <ion-icon color="danger" src="/assets/iconos/calendar-times-regular.svg" size="large"></ion-icon>
+            </ion-col>
+            <ion-col size="6" class="ion-text-right">
+              <ion-label>{{ totalInasistencias }}</ion-label>
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+
+    <ion-col size="6" size-sm="6" size-md="4" size-lg="2">
+      <ion-card class="border-left-secondary fondo" (click)="redireccionar('permiso-consulta')">
+        <ion-card-header>
+          <ion-card-title class="ion-text-uppercase">
+            <ion-text color="secondary" style="font-size: small;">
+              Total Permisos
+            </ion-text>
+          </ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          <ion-row>
+            <ion-col size="6">
+              <ion-icon color="secondary" src="/assets/iconos/ticket-alt-solid.svg" size="large"></ion-icon>
+            </ion-col>
+            <ion-col size="6" class="ion-text-right">
+              <ion-label>{{ totalPermisos }}</ion-label>
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+
+
+    <ion-col size="6" size-sm="6" size-md="4" size-lg="2">
+      <ion-card class="border-left-secondary fondo" (click)="redireccionar('medica-consulta')">
+        <ion-card-header>
+          <ion-card-title class="ion-text-uppercase">
+            <ion-text color="tertiary" style="font-size: small;">
+              Total Licencias Medicas
+            </ion-text>
+          </ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          <ion-row>
+            <ion-col size="6">
+              <ion-icon color="tertiary" src="assets/iconos/medkit-solid.svg" size="large"></ion-icon>
+            </ion-col>
+            <ion-col size="6" class="ion-text-right">
+              <ion-label>{{ totalLicencias }}</ion-label>
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+
+    <ion-col size="6" size-sm="6" size-md="4" size-lg="2">
+      <ion-card class="border-left-warning fondo" (click)="redireccionar('reportes')">
+        <ion-card-header>
+          <ion-card-title class="ion-text-uppercase">
+            <ion-text color="warning" style="font-size: small;">
+              Total Vacaciones
+            </ion-text>
+          </ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          <ion-row>
+            <ion-col size="6">
+              <ion-icon color="warning" src="/assets/iconos/umbrella-beach-solid.svg" size="large"></ion-icon>
+            </ion-col>
+            <ion-col size="6" class="ion-text-right">
+              <ion-label>{{ totalVacacion }}</ion-label>
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+
+  </ion-row>
+</ion-content>

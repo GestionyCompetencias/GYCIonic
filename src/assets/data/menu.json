@@ -1,0 +1,17 @@
+[
+    {
+      "icon": "home-outline",
+      "title": "Inicio",
+      "redirectTo": "/home"
+    },
+    {
+      "icon": "watch-outline",
+      "title": "Control de Asistencias",
+      "redirectTo": "/btn-asistencias"
+    },
+    {
+      "icon": "document-attach-outline",
+      "title": "Gestión Documental",
+      "redirectTo": "/btn-documental"
+    }
+  ]

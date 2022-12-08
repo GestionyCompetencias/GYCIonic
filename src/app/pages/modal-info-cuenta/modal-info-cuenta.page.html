@@ -1,0 +1,92 @@
+<ion-header>
+  <ion-header class="ion-no-border">
+    <ion-toolbar color="dark">
+      <ion-title>Detalles Cuenta</ion-title>
+  
+      <ion-buttons slot="end">
+        <ion-button (click)="cerrarModal()" color="tertiary" fill="solid" shape="round">
+          <ion-icon slot="start" name="close"></ion-icon>
+          Cerrar
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content >
+    <ion-list>
+  
+      <ion-item>
+        <ion-label>
+          <h3>Periodo</h3>
+          <p class="ion-text-uppercase">{{ periodo }}</p>
+        </ion-label>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>
+          <h3>Días</h3>
+          <p class="ion-text-uppercase">{{ diastot }}</p>
+        </ion-label>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>
+          <h3>Inicio Vacación</h3>
+          <p class="ion-text-uppercase">{{ finivac }}</p>
+        </ion-label>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>
+          <h3>Termino Vacacion</h3>
+          <p class="ion-text-uppercase">{{ ftervac }}</p>
+        </ion-label>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>
+          <h3>Usados</h3>
+          <p class="ion-text-uppercase">{{ diasusa }}</p>
+        </ion-label>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>
+          <h3>Acumulados</h3>
+          <p class="ion-text-uppercase">{{ diasacu }}</p>
+        </ion-label>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>
+          <h3>Compensados</h3>
+          <p class="ion-text-uppercase">{{ fcompe }}</p>
+        </ion-label>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>
+          <h3>Días</h3>
+          <p class="ion-text-uppercase">{{ diascom }}</p>
+        </ion-label>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>
+          <h3>Ocupados</h3>
+          <p class="ion-text-uppercase">{{ diasocu }}</p>
+        </ion-label>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>
+          <h3>Pendientes</h3>
+          <p class="ion-text-uppercase">{{ diaspen }}</p>
+        </ion-label>
+      </ion-item>
+  
+  
+  
+    </ion-list>
+  </ion-content>
+  

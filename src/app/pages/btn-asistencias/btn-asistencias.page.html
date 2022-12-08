@@ -1,0 +1,27 @@
+<app-header title="Control de Asistencias"></app-header>
+
+<ion-content class="ion-padding">
+  <ion-card mode="ios" class="fondo">
+    <ion-img src="assets/img/logo.jpeg"></ion-img>
+    <!-- <img src="/assets/Vectorizadojpg.jpg"> -->
+
+    <ion-card-content>
+      <ion-button (click)="presentActionSheetReports()" expand="block" fill="outline" color="primary">
+        <ion-icon slot="start" name="newspaper"></ion-icon>
+        <ion-label>Reportes</ion-label>
+      </ion-button>
+      <ion-button (click)="presentActionSheetVacations()" expand="block" fill="outline" color="primary">
+        <ion-icon slot="start" name="airplane"></ion-icon>
+        <ion-label>Vacaciones</ion-label>
+      </ion-button>
+      <ion-button (click)="presentActionSheetPermission()" expand="block" fill="outline" color="primary">
+        <ion-icon slot="start" src="/assets/iconos/user-shield-solid.svg"></ion-icon>
+        <ion-label>Permisos</ion-label>
+      </ion-button>
+      <ion-button (click)="presentActionSheetMedicine()" expand="block" fill="outline" color="primary">
+        <ion-icon slot="start" src="/assets/iconos/clipboard-list-solid.svg"></ion-icon>
+        <ion-label>Licencias Médicas</ion-label>
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,130 @@
+<app-header title="Solicitud de Permiso"></app-header>
+
+<ion-content>
+  <form #formDocumentFind="ngForm" (ngSubmit)="onSubmitSolicitud()">
+    <ion-item>
+      <ion-label position="floating">Usuario</ion-label>
+      <ion-input required name="usuario" [(ngModel)]="dataSolicitud.user" type="text" readonly></ion-input>
+    </ion-item>
+
+    <ion-list>
+      <ion-accordion-group>
+        <ion-accordion value="first">
+          <ion-item slot="header">
+            <ion-label>Inicio</ion-label>
+            <ion-note slot="end" style="font-size: 1em;">{{ dataSolicitud.fecha1 | date: 'dd-MM-yyyy' }}</ion-note>
+          </ion-item>
+          <ion-datetime
+            id="datetime"
+            name="inicio"
+            slot="content"
+            display-format="DD MM YYYY"
+            [ngModel]="fechaInicio.toISOString()"
+            (ionChange)="cambioFechaInicio( $event )"
+          ></ion-datetime>
+        </ion-accordion>
+        <ion-accordion value="second">
+          <ion-item slot="header">
+            <ion-label>Hora Inicio</ion-label>
+            <ion-note slot="end" style="font-size: 1em;">{{ dataSolicitud.hora1 }}</ion-note>
+          </ion-item>
+          <ion-datetime 
+            presentation="time"
+            id="datetime2"
+            name="HoraInicio"
+            slot="content"
+            (ionChange)="cambioHoraInicio( $event )"
+          ></ion-datetime>
+        </ion-accordion>
+        <ion-accordion value="third">
+          <ion-item slot="header">
+            <ion-label>Termino</ion-label>
+            <ion-note slot="end" style="font-size: 1em;">{{ dataSolicitud.fecha2 | date: 'dd-MM-yyyy' }}</ion-note>
+          </ion-item>
+          <ion-datetime
+            id="datetime2"
+            name="termino"
+            slot="content"
+            display-format="DD MM YYYY"
+            [ngModel]="fechaTermino.toISOString()"
+            (ionChange)="cambioFechaTermino( $event )"
+          ></ion-datetime>
+        </ion-accordion>
+        <ion-accordion value="fourth">
+          <ion-item slot="header">
+            <ion-label>Hora Termino</ion-label>
+            <ion-note slot="end" style="font-size: 1em;">{{ dataSolicitud.hora2 }}</ion-note>
+          </ion-item>
+          <ion-datetime
+            presentation="time"
+            id="datetime4"
+            name = "horaTermino"
+            slot="content"
+            (ionChange)="cambioHoraTermino( $event )"
+          ></ion-datetime>
+        </ion-accordion>
+      </ion-accordion-group>
+    </ion-list>
+
+    <!-- <ion-item>
+
+
+      <ion-label>Fecha Inicio</ion-label>
+      <ion-datetime placeholder="Inicio"
+                    name="inicio"
+                    display-format="DD MM YYYY"
+                    cancelText="Cancelar"
+                    doneText="Ok"
+                    [ngModel]="fechaInicio.toISOString()"
+                    (ionChange)="cambioFechaInicio( $event )">
+      </ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Hora Inicio</ion-label>
+      <ion-datetime displayFormat="h:mm a"
+                    name="Horainicio"
+                    cancelText="Cancelar"
+                    doneText="Ok"
+                    (ionChange)="cambioHoraInicio( $event )">
+      </ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Fecha Termino</ion-label>
+      <ion-datetime placeholder="Inicio"
+                    name = "termino"
+                    display-format="DD MM YYYY"
+                    cancelText="Cancelar"
+                    doneText="Ok"
+                    [ngModel]="fechaTermino.toISOString()"
+                    (ionChange)="cambioFechaTermino( $event )">
+      </ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Hora Termino</ion-label>
+      <ion-datetime displayFormat="h:mm a"
+                    name="Horainicio"
+                    cancelText="Cancelar"
+                    doneText="Ok"
+                    (ionChange)="cambioHoraTermino( $event )">
+      </ion-datetime>
+    </ion-item> -->
+
+    <ion-item>
+      <ion-label position="floating">Motivo</ion-label>
+      <ion-select interface="pop-over" [(ngModel)]="dataSolicitud.motivo" name="motivo">
+        <ion-select-option class="text-color" *ngFor="let opc of motivosOpc" value="{{ opc.Id }}">{{ opc.Descripcion }}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+
+
+    <ion-button block color="primary" expand="full" type="submit">
+      <ion-icon slot="start" name="caret-forward-circle"></ion-icon>
+      <ion-label>Solicitar</ion-label>
+    </ion-button>
+  </form>
+
+</ion-content>

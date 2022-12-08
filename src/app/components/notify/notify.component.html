@@ -1,0 +1,10 @@
+<ion-button *ngIf="cantidad > 0" (click)="loadNotificaciones()">
+  <ion-chip color="danger">
+    <ion-icon color="danger" name="notifications"></ion-icon>
+    <ion-label>{{ cantidad }}</ion-label>
+  </ion-chip>
+</ion-button>
+
+<ion-button *ngIf="cantidad === 0">
+  <ion-icon slot="icon-only" name="notifications"></ion-icon>
+</ion-button>

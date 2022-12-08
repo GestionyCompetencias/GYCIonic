@@ -1,0 +1,198 @@
+<app-header title="Información Personal"></app-header>
+
+<ion-content>
+  <ion-card mode="ios">
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label>RUT</ion-label>
+          <ion-label slot="end" class="ion-text-right">{{ rut }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <h3>Nombre</h3>
+            <p class="ion-text-uppercase">{{ trabajador.nombre }}</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <h3>Apellidos</h3>
+            <p class="ion-text-uppercase">{{ trabajador.apaterno }} {{ trabajador.amaterno }}</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <h3>Fecha Nacimiento</h3>
+            <p class="ion-text-uppercase">{{ trabajador.fnacimiento | date: 'dd-MM-yyyy' }}</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <h3>Sexo</h3>
+            <p class="ion-text-uppercase">{{ trabajador.sexo }}</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <h3>Dirección</h3>
+            <p class="ion-text-uppercase">{{ trabajador.direccion }}</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <h3>Región</h3>
+            <p class="ion-text-uppercase">{{ trabajador.region }}</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <h3>Comuna</h3>
+            <p class="ion-text-uppercase">{{ trabajador.comuna }}</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <h3>Ciudad</h3>
+            <p class="ion-text-uppercase">{{ trabajador.ciudad }}</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <h3>Teléfono(1)</h3>
+            <p class="ion-text-uppercase">{{ trabajador.telefono1 }}</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <h3>Teléfono(2)</h3>
+            <p class="ion-text-uppercase">{{ trabajador.telefono2 }}</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <h3>Correo</h3>
+            <p>{{ trabajador.correo }}</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <h3>Faena</h3>
+            <p class="ion-text-uppercase">{{ trabajador.faena }}</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <h3>Cargo</h3>
+            <p class="ion-text-uppercase">{{ trabajador.cargo }}</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <h3>Banco</h3>
+            <p class="ion-text-uppercase">{{ trabajador.banco }}</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <h3>Prevision</h3>
+            <p class="ion-text-uppercase">{{ trabajador.prevision }}</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <h3>Salud</h3>
+            <p class="ion-text-uppercase">{{ trabajador.salud }}</p>
+          </ion-label>
+        </ion-item>
+
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card mode="ios">
+    <ion-card-header>
+      <ion-card-title>
+        <div class="titulo">Información de Contrato</div>
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label>
+            <h3>Empresa</h3>
+            <p class="ion-text-uppercase">{{ trabajador.razonsocial }}</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <h3>Tipo Contrato</h3>
+            <p class="ion-text-uppercase">{{ trabajador.tipocontrato }}</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <h3>Faena</h3>
+            <p class="ion-text-uppercase">{{ trabajador.faena }}</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <h3>Cargo</h3>
+            <p class="ion-text-uppercase">{{ trabajador.cargo }}</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <h3>Turno</h3>
+            <p class="ion-text-uppercase">{{ trabajador.turno }}</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <h3>Fecha Inicio</h3>
+            <p class="ion-text-uppercase">{{ trabajador.finicio | date: 'dd-MM-yyyy' }}</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <h3>Fecha Termino</h3>
+            <p class="ion-text-uppercase">{{ trabajador.ftermi | date: 'dd-MM-yyyy' }}</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <h3>Sueldo</h3>
+            <p class="ion-text-uppercase">{{ trabajador.sueldo }}</p>
+          </ion-label>
+        </ion-item>
+
+
+      </ion-list>
+    </ion-card-content>
+
+  </ion-card>
+</ion-content>
+

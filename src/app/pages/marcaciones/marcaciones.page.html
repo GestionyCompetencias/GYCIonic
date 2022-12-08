@@ -1,0 +1,79 @@
+<app-header title="Marcaciones"></app-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-accordion-group>
+      <ion-accordion value="first">
+        <ion-item slot="header">
+          <ion-label>Inicio</ion-label>
+          <ion-note slot="end" style="font-size: 1em;">{{ dataFind.fecha1 | date: 'dd-MM-yyyy' }}</ion-note>
+        </ion-item>
+        <ion-datetime
+          id="datetime"
+          slot="content"
+          display-format="DD MM YYYY"
+          [ngModel]="fechaInicio.toISOString()"
+          (ionChange)="cambioFechaInicio( $event )"
+        ></ion-datetime>
+      </ion-accordion>
+      <ion-accordion value="second">
+        <ion-item slot="header">
+          <ion-label>Termino</ion-label>
+          <ion-note slot="end" style="font-size: 1em;">{{ dataFind.fecha2 | date: 'dd-MM-yyyy' }}</ion-note>
+        </ion-item>
+        <ion-datetime
+          id="datetime2"
+          slot="content"
+          display-format="DD MM YYYY"
+          [ngModel]="fechaTermino.toISOString()"
+          (ionChange)="cambioFechaTermino( $event )"
+        ></ion-datetime>
+      </ion-accordion>
+    </ion-accordion-group>
+  </ion-list>
+
+  <ion-button (click)="buscarMarcaciones()" expand="full">
+    <ion-icon slot="start" name="caret-forward-circle"></ion-icon>
+    <ion-label>Buscar</ion-label>
+  </ion-button>
+
+  <ion-list *ngIf="marcaciones.length > 0">
+    <ion-list-header>
+      <ion-label class="ion-text-uppercase">
+        <strong>
+          Reporte de marcaciones desde el {{ dataFind.fecha1 | date: 'dd-MM-yyyy' }} hasta el {{ dataFind.fecha2 | date: 'dd-MM-yyyy' }}
+        </strong>
+      </ion-label>
+    </ion-list-header>
+
+    <ion-item-sliding *ngFor="let item of marcaciones">
+      <ion-item>
+        <ion-label>
+          <h3>{{ item.RUT }}</h3>
+          <p>{{ item.NOMBRE }}</p>
+        </ion-label>
+
+        <ion-label slot="end" class="ion-text-right">{{ item.FECHA | date: 'dd-MM-yyyy' }}</ion-label>
+      </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option (click)="detail( item )">
+          <ion-icon slot="icon-only" name="eye"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+  </ion-list>
+
+  <ion-grid *ngIf="totalMarcaciones == 0 || totalMarcaciones == null">
+    <ion-row>
+      <ion-col>
+        <ion-text color="secondary" class="ion-text-center">
+          <h5>Disculpe no se han encontrado registros concurrentes con las fechas que han sido ingresadas.</h5>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+

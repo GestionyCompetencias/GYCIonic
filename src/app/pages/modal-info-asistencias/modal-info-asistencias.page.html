@@ -1,0 +1,112 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="dark">
+    <ion-title>Detalles Asistencia</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="cerrarModal()" color="tertiary" fill="solid" shape="round">
+        <ion-icon slot="start" name="close"></ion-icon>
+        Cerrar
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-list>
+
+    <ion-item>
+      <ion-label>
+        <h3>Fecha</h3>
+        <p class="ion-text-uppercase">{{ fecha }}</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <h3>Dia</h3>
+        <p class="ion-text-uppercase">{{ diasem }}</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <h3>Ausencia</h3>
+        <p class="ion-text-uppercase">{{ inasistencia }}</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <h3>Entrada Turno</h3>
+        <p class="ion-text-uppercase">{{ turnoentrada }}</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <h3>Salida Turno</h3>
+        <p class="ion-text-uppercase">{{ turnosalida }}</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <h3>Entrada</h3>
+        <p class="ion-text-uppercase">{{ marcaentrada }}</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <h3>Man</h3>
+        <p class="ion-text-uppercase">{{ manualentrada }}</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <h3>Salida</h3>
+        <p class="ion-text-uppercase">{{ marcasalida }}</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <h3>Man</h3>
+        <p class="ion-text-uppercase">{{ manualsalida }}</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <h3>Hrs asistencia</h3>
+        <p class="ion-text-uppercase">{{ horasturno }}</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <h3>Hrs trabajo</h3>
+        <p class="ion-text-uppercase">{{ horastrabajadas }}</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <h3>Tardanza</h3>
+        <p class="ion-text-uppercase">{{ retrasos }}</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <h3>Hrs extras</h3>
+        <p class="ion-text-uppercase">{{ sobretiempos }}</p>
+      </ion-label>
+    </ion-item>
+
+
+
+
+  </ion-list>
+</ion-content>

@@ -1,0 +1,98 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="dark">
+    <ion-title>Detalles Periodo Usado</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="cerrarModal()" color="tertiary" fill="solid" shape="round">
+        <ion-icon slot="start" name="close"></ion-icon>
+        Cerrar
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-list>
+
+    <ion-item>
+      <ion-label>
+        <h3>Periodo</h3>
+        <p class="ion-text-uppercase">{{ ano_inicio }} {{ ano_termino }}</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <h3>Inicio Vacación</h3>
+        <p class="ion-text-uppercase">{{ fec_inivac }}</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <h3>Final Vacacion</h3>
+        <p class="ion-text-uppercase">{{ fec_tervac }}</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <h3>Correlativo</h3>
+        <p class="ion-text-uppercase">{{ correl }}</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <h3>Días Legales</h3>
+        <p class="ion-text-uppercase">{{ dias_legal }}</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <h3>Días Progresivos</h3>
+        <p class="ion-text-uppercase">{{ dias_progr }}</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <h3>Días Contrato</h3>
+        <p class="ion-text-uppercase">{{ dias_contr }}</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <h3>Días Administrativos</h3>
+        <p class="ion-text-uppercase">{{ dias_admin }}</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <h3>Días Faena</h3>
+        <p class="ion-text-uppercase">{{ dias_faena }}</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <h3>Días Especiales</h3>
+        <p class="ion-text-uppercase">{{ dias_especi }}</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <h3>Otros</h3>
+        <p class="ion-text-uppercase">{{ dias_otros }}</p>
+      </ion-label>
+    </ion-item>
+
+
+
+  </ion-list>
+</ion-content>
+

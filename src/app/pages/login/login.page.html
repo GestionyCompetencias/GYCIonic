@@ -1,0 +1,81 @@
+<ion-content class="ion-padding fondo">
+
+  <div class="content-login fondo">
+    <ion-card class="fondo">
+      <ion-img src="assets/img/logo.jpeg"></ion-img>
+
+      <ion-card-header class="fondo">
+        <ion-card-title class="ion-text-center fondo">
+          <strong>¡Bienvenidos!</strong>
+        </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content class="fondo">
+        <form #loginForm="ngForm" (ngSubmit)="onSubmit()" class="fondo">
+
+          <ion-grid fixed color="light">
+            <ion-row color="light">
+              <ion-col size="2" color="light">
+                <ion-icon class="m-top" name="person" size="large"></ion-icon>
+              </ion-col>
+              <ion-col size="10" color="light">
+                <ion-item>
+                  <ion-label position="floating">Usuario <small>(Ingrese RUT)</small> <ion-text color="danger">*</ion-text></ion-label>
+                  <ion-input required name="user" [(ngModel)]="user" type="text"></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col size="2">
+                <ion-icon class="m-top" name="lock-closed" size="large"></ion-icon>
+              </ion-col>
+              <ion-col size="10">
+                <ion-item>
+                  <ion-label position="floating">Password <ion-text color="danger">*</ion-text></ion-label>
+                  <ion-input required name="password" [(ngModel)]="password" type="password"></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+
+
+
+
+          <p class="ion-text-center fondo">
+            <ion-button type="submit" [disabled]="!loginForm.valid" shape="round">
+              Iniciar Sesion
+            </ion-button>
+          </p>
+
+
+          <br>
+
+          <p class="ion-text-center">
+            Da click en el QR para escanear
+          </p>
+          <p class="ion-text-center">
+            <ion-button (click)="scan()" color="medium" fill="clear" size="large">
+              <ion-icon slot="icon-only" name="qr-code-outline"></ion-icon>
+            </ion-button>
+          </p>
+
+        </form>
+      </ion-card-content>
+
+    </ion-card>
+  </div>
+
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">
+     <div class="fondo">
+      Gestion y Competencias - Chile <br>
+      gycsolcta_v_1002000
+     </div>
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,108 @@
+<app-header title="Periodos Vacacion"></app-header>
+
+<ion-content>
+
+  <ion-card class="fondo">
+    <ion-card-header>
+      <ion-card-subtitle>Trabajador:</ion-card-subtitle>
+      <ion-card-title class="text-color">{{ trabajador }}</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card class="fondo" *ngFor="let item of periodos; let i=index">
+    <ion-card-header color="medium">
+      <ion-card-subtitle>Periodo {{ i + 1 }} </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+
+        <ion-item>
+          <ion-label>
+            <h3>Periodo</h3>
+          </ion-label>
+          <ion-label slot="end" class="ion-text-right">
+            <p>{{ item.ano_inicio }} {{ item.ano_termino }}</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <h3>Días Legales</h3>
+          </ion-label>
+          <ion-label slot="end" class="ion-text-right">
+            <p>{{ item.dias_legal }}</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <h3>Días Progresivos</h3>
+          </ion-label>
+          <ion-label slot="end" class="ion-text-right">
+            <p>{{ item.dias_progr }}</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <h3>Días Contrato</h3>
+          </ion-label>
+          <ion-label slot="end" class="ion-text-right">
+            <p>{{ item.dias_contr }}</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <h3>Días Administrativos</h3>
+          </ion-label>
+          <ion-label slot="end" class="ion-text-right">
+            <p>{{ item.dias_admin }}</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <h3>Días Faena</h3>
+          </ion-label>
+          <ion-label slot="end" class="ion-text-right">
+            <p>{{ item.dias_faena }}</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <h3>Días Especiales</h3>
+          </ion-label>
+          <ion-label slot="end" class="ion-text-right">
+            <p>{{ item.dias_especi }}</p>
+          </ion-label>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>
+            <h3>Totales</h3>
+          </ion-label>
+          <ion-label slot="end" class="ion-text-right">
+            <p>{{ item.dias_especi + item.dias_faena +  item.dias_admin +  item.dias_contr +  item.dias_progr +  item.dias_legal}}</p>
+          </ion-label>
+        </ion-item>
+
+      </ion-list>
+
+    </ion-card-content>
+
+  </ion-card>
+
+  <ion-grid *ngIf="periodos.length == 0 || periodos == null">
+    <ion-row>
+      <ion-col>
+        <ion-text color="secondary" class="ion-text-center">
+          <h5>Disculpe no se han encontrado registros asociados a usted.</h5>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+

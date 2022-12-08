@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar class="fondo">
+    <ion-buttons slot="start" class="fondo">
+      <ion-button color="primary">
+        <ion-icon slot="icon-only" name="person-circle"></ion-icon>
+      </ion-button>
+      <ion-tab-button (click)="openAdmon()">
+        <ion-icon name="trail-sign-outline" color="medium"></ion-icon>
+        <ion-label>Admon</ion-label>
+      </ion-tab-button>
+    </ion-buttons>
+
+    <ion-title class="fondo">
+
+    </ion-title>
+
+    <ion-buttons slot="end" class="fondo">
+      <ion-button (click)="switchCamera()" color="success">
+        <ion-icon slot="icon-only" name="sync-outline"></ion-icon>
+      </ion-button>
+      <ion-button (click)="closeApp()" color="danger">
+        <ion-icon slot="icon-only" name="power"></ion-icon>
+      </ion-button>
+      <ion-button (click)="loadSettings()" color="primary">
+        <ion-icon slot="icon-only" src="assets/iconos/cog-solid.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="fondo">
+  <ion-grid class="botonera fondo">
+    <ion-row class="fondo">
+      <ion-col size="12" size-sm="6" class="fondo">
+        <ion-button color="primary" expand="block" size="large" (click)="confirmMarker('I')">
+          <ion-label>Marcar Entrada</ion-label>
+          <ion-icon slot="end" name="log-in"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col size="12" size-sm="6" class="fondo">
+        <ion-button color="success" expand="block" size="large" (click)="confirmMarker('O')">
+          <ion-label>Marcar Salida</ion-label>
+          <ion-icon slot="end" name="log-out"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <!-- <ion-col size="12" size-sm="6">
+        <ion-button color="secondary" expand="block" size="large" (click)="volverAtras()">
+          <ion-label>Volver Atras</ion-label>
+          <ion-icon slot="end" name="arrow-undo-outline"></ion-icon>
+        </ion-button>
+      </ion-col> -->
+    </ion-row>
+
+    <ion-row class="fondo">
+      <ion-col class="fondo">
+        <ion-list class="fondo">
+          <ion-item class="fondo">
+            <ion-img *ngIf="logo === null" src="assets/img/logo-default.jpg" class="logo-marker"></ion-img>
+            <ion-img *ngIf="logo !== null" [src]="logo" class="logo-marker"></ion-img>
+            <br>
+            <p class="fondo"></p>
+            <p class="ion-text-center ion-text-uppercase fondo" style="font-size: small;">
+              {{ rutEmpresa }}<br>
+              {{ razonSocial }}<br>
+              {{ direccion }}<br>
+              {{ comuna }}
+            </p>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
